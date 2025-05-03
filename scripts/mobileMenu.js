@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('mousedown', (event) => {
-    console.log(event.target);
     if (navLinks.classList.contains('active')) {
       if (event.target && !event.target.closest('nav')) {
         hamburger.classList.remove('active');
