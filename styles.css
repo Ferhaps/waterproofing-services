@@ -155,7 +155,12 @@ nav a.active {
 
 h2 {
   color: #004a7c;
+  margin-top: 0 !important;
   margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 ul {
@@ -348,6 +353,10 @@ address {
     font-size: 1.2rem;
   }
 
+  h2 {
+    margin-top: 0 !important;
+  }
+
   .container {
     padding: 1rem !important;
     margin-top: 2rem !important;
@@ -399,12 +408,16 @@ address {
     transform: translateY(-9px) rotate(-45deg);
   }
 
+  #services h2 {
+    margin: 0 !important;
+  }
+
   .services-container {
     flex-direction: column-reverse;
+    gap: 0 !important;
   }
   
   .services-image {
-    margin-bottom: 1rem;
     width: 100%;
   }
   
