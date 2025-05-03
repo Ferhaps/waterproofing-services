@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const totalImages = 33;
-  const imagePath = '../assets/images/galleryImg';
+  const imagePath = './../assets/images/galleryImg';
   
   const carouselContainer = document.querySelector('.carousel-container');
   const indicatorsContainer = document.querySelector('.carousel-indicators');
