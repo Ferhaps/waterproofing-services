@@ -93,20 +93,4 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize carousel
   createSlides();
-  
-  // Optional: Auto-advance slides
-  let autoSlideInterval = setInterval(() => {
-    nextButton.click();
-  }, 5000);
-  
-  // Pause auto-advance when hovering over carousel
-  document.querySelector('.carousel').addEventListener('mouseenter', () => {
-    clearInterval(autoSlideInterval);
-  });
-  
-  document.querySelector('.carousel').addEventListener('mouseleave', () => {
-    autoSlideInterval = setInterval(() => {
-      nextButton.click();
-    }, 5000);
-  });
 });
