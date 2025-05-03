@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSlide = 0;
   const MAX_INDICATORS_PER_ROW = 15;
   
+  // Touch variables for swipe functionality
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
   function createSlides() {
     // Clear any existing indicators
     indicatorsContainer.innerHTML = '';
@@ -90,6 +94,31 @@ document.addEventListener('DOMContentLoaded', () => {
       nextButton.click();
     }
   });
+  
+  // Add touch event listeners for mobile swipe functionality
+  carouselContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  
+  carouselContainer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+  
+  // Handle the swipe direction
+  function handleSwipe() {
+    // Calculate swipe distance
+    const swipeDistance = touchEndX - touchStartX;
+    const minSwipeDistance = 50; // Minimum distance to register as a swipe
+    
+    if (swipeDistance > minSwipeDistance) {
+      // Swipe from left to right - show previous image
+      prevButton.click();
+    } else if (swipeDistance < -minSwipeDistance) {
+      // Swipe from right to left - show next image
+      nextButton.click();
+    }
+  }
   
   // Initialize carousel
   createSlides();

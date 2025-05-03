@@ -195,6 +195,8 @@ th {
   display: flex;
   transition: transform 0.5s ease-in-out;
   height: 400px;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .carousel-slide {
