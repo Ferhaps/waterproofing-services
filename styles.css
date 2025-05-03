@@ -302,6 +302,30 @@ address {
   line-height: 1.6;
 }
 
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.services-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.services-image {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.builder-image {
+  max-width: 250px;
+  height: auto;
+}
+
 @media (max-width: 480px) {
   .carousel-container {
     height: 200px;
@@ -371,5 +395,18 @@ address {
   
   .hamburger.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .services-container {
+    flex-direction: column-reverse;
+  }
+  
+  .services-image {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .builder-image {
+    max-width: 200px;
   }
 }
