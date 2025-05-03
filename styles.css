@@ -246,10 +246,10 @@ th {
 
 .carousel-indicators {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 8px;
   margin-top: 10px;
-  flex-wrap: wrap;
 }
 
 .indicator {
@@ -338,22 +338,6 @@ address {
     font-size: 14px;
   }
   
-  .indicator {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .indicator-row {
-    margin-bottom: 3px;
-  }
-
-  .carousel-indicators {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 15px;
-    gap: 5px;
-  }
-
   .nav-links {
     position: absolute;
     top: 70px;
