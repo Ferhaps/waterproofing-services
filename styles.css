@@ -153,6 +153,17 @@ nav a.active {
   margin-top: 3rem;
 }
 
+.carousel-first, .carousel-second {
+  margin-bottom: 3rem;
+}
+
+h3 {
+  color: #004a7c;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
 h2 {
   color: #004a7c;
   margin-top: 0 !important;
