@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
       indicatorsSelector: '.carousel-indicators-second',
       prevButtonSelector: '.carousel-button.prev-second',
       nextButtonSelector: '.carousel-button.next-second',
+    },
+    {
+      id: 'thirdRow',
+      totalImages: 3,
+      imagePath: 'assets/images/thirdRow',
+      containerSelector: '.carousel-container-third',
+      indicatorsSelector: '.carousel-indicators-third',
+      prevButtonSelector: '.carousel-button.prev-third',
+      nextButtonSelector: '.carousel-button.next-third',
     }
   ];
   
@@ -124,22 +133,28 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     const firstCarouselRect = document.querySelector('.carousel-first').getBoundingClientRect();
     const secondCarouselRect = document.querySelector('.carousel-second').getBoundingClientRect();
+    const thirdCarouselRect = document.querySelector('.carousel-third').getBoundingClientRect();
     
     const windowHeight = window.innerHeight;
     const isFirstVisible = firstCarouselRect.top < windowHeight && firstCarouselRect.bottom > 0;
     const isSecondVisible = secondCarouselRect.top < windowHeight && secondCarouselRect.bottom > 0;
+    const isThirdVisible = thirdCarouselRect.top < windowHeight && thirdCarouselRect.bottom > 0;
     
     if (e.key === 'ArrowLeft') {
-      if (isFirstVisible && !isSecondVisible) {
+      if (isFirstVisible && !isSecondVisible && !isThirdVisible) {
         document.querySelector('.carousel-button.prev-first').click();
-      } else if (isSecondVisible) {
+      } else if (isSecondVisible && !isThirdVisible) {
         document.querySelector('.carousel-button.prev-second').click();
+      } else if (isThirdVisible) {
+        document.querySelector('.carousel-button.prev-third').click();
       }
     } else if (e.key === 'ArrowRight') {
-      if (isFirstVisible && !isSecondVisible) {
+      if (isFirstVisible && !isSecondVisible && !isThirdVisible) {
         document.querySelector('.carousel-button.next-first').click();
-      } else if (isSecondVisible) {
+      } else if (isSecondVisible && !isThirdVisible) {
         document.querySelector('.carousel-button.next-second').click();
+      } else if (isThirdVisible) {
+        document.querySelector('.carousel-button.next-third').click();
       }
     }
   });
